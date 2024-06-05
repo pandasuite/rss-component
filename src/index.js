@@ -1,12 +1,22 @@
 import PandaBridge from "pandasuite-bridge";
+import { parse } from "rss-to-json";
+
 import "./index.css";
 
 let properties = null;
 let markers = null;
 
-function myInit() {
-  // const imageUrl = PandaBridge.resolvePath('my_image.png');
-  // PandaBridge.send('imageChanged');
+async function myInit() {
+  const rss = await parse(properties.url);
+
+  const queryable = {
+    rss,
+  };
+
+  PandaBridge.send("rss", [queryable]);
+  PandaBridge.send(PandaBridge.UPDATED, {
+    queryable,
+  });
 }
 
 PandaBridge.init(() => {

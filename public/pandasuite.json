@@ -3,92 +3,62 @@
   "main": "",
 
   "system": {
-    "localization": false,
-    "actions": [
-      {
-        "id": "toMarker",
-        "name": "Change Image",
-        "locale_name": {
-          "fr_FR": "Change Image"
-        },
-        "params": [
-          { "id": "useless", "name": "Useless", "locale_name": {"fr_FR": "Inutile"}, "type": "Boolean" }
-        ]
-      }
-    ],
-    "events": [
-      {
-        "id": "triggerMarker",
-        "name": "Image",
-        "locale_name": {
-          "fr_FR": "Image"
-        }
-      }
-    ],
-    "markers": [
-      {
-        "params": [
-          { "id": "src", "name": "Source", "locale_name": {"fr_FR": "Source"}, "type": "String" }
-        ]
-      }
-    ]
+    "localization": false
   },
 
   "properties": [
     {
-      "id": "searchTerm",
-      "name": "Search Term",
+      "id": "url",
+      "name": "URL",
       "locale_name": {
-        "fr_FR": "Terme de recherche"
+        "fr_FR": "URL"
       },
       "type": "String",
-      "value": "panda"
+      "value": "https://focusingonwildlife.com/news/feed/"
     }
   ],
 
   "events": [
     {
-      "id": "imageChanged",
-      "name": "Image Changed",
+      "id": "rss",
+      "name": "RSS",
       "locale_name": {
-        "fr_FR": "Image Changée"
-      }
-    }
-  ],
-
-  "actions": [
-    {
-      "id": "changeColor",
-      "name": "Change Color",
-      "params": [
-        {
-          "id": "backgroundColor",
-          "name": "Background Color",
+        "fr_FR": "RSS"
+      },
+      "queryable": {
+        "rss": {
+          "title": "Focusing on Wildlife",
+          "description": "Celebrating the biodiversity of Planet Earth",
+          "link": "https://focusingonwildlife.com/news",
+          "image": "",
+          "category": [],
+          "items": []
+        },
+        "__desc_rss": {
+          "name": "RSS Feed",
           "locale_name": {
-            "fr_FR": "Couleur de fond"
-          },
-          "type": "String",
-          "value": "#FFFFFF"
+            "fr_FR": "Flux RSS"
+          }
         }
-      ]
-    }
-  ],
-
-  "synchronization": [
-    {
-      "id": "synchroImages",
-      "name": "Synchronize images",
-      "locale_name": {
-        "fr_FR": "Synchroniser images"
       }
     }
   ],
+  "actions": [],
 
-  "resources": [
-    {
-      "id": "my_image.png",
-      "type": "Image",
-      "localization": false
+  "queryable": {
+    "rss": {
+      "title": "Focusing on Wildlife",
+      "description": "Celebrating the biodiversity of Planet Earth",
+      "link": "https://focusingonwildlife.com/news",
+      "image": "",
+      "category": [],
+      "items": []
+    },
+    "__desc_rss": {
+      "name": "RSS Feed",
+      "locale_name": {
+        "fr_FR": "Flux RSS"
+      }
     }
-  ]
+  }
 }
