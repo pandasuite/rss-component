@@ -14,7 +14,8 @@
         "fr_FR": "URL"
       },
       "type": "String",
-      "value": "https://focusingonwildlife.com/news/feed/"
+      "value": "https://focusingonwildlife.com/news/feed/",
+      "bindable": true
     }
   ],
 
