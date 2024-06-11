@@ -16,6 +16,17 @@
       "type": "String",
       "value": "https://focusingonwildlife.com/news/feed/",
       "bindable": true
+    },
+    {
+      "id": "autoStart",
+      "name": "Auto start",
+      "locale_name": {
+        "fr_FR": "Démarrage auto."
+      },
+      "type": "Boolean",
+      "value": true,
+      "separator": true,
+      "bindable": true
     }
   ],
 
@@ -44,7 +55,15 @@
       }
     }
   ],
-  "actions": [],
+  "actions": [
+    {
+      "id": "refresh",
+      "name": "Refresh",
+      "locale_name": {
+        "fr_FR": "Rafraîchir"
+      }
+    }
+  ],
 
   "queryable": {
     "rss": {

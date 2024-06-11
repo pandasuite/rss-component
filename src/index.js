@@ -6,7 +6,7 @@ import "./index.css";
 let properties = null;
 let markers = null;
 
-async function myInit() {
+async function parseRSS() {
   const rss = await parse(properties.url);
 
   const queryable = {
@@ -24,10 +24,12 @@ PandaBridge.init(() => {
     properties = pandaData.properties;
     markers = pandaData.markers;
 
-    if (document.readyState === "complete") {
-      myInit();
-    } else {
-      document.addEventListener("DOMContentLoaded", myInit, false);
+    if (properties.autoStart) {
+      if (document.readyState === "complete") {
+        parseRSS();
+      } else {
+        document.addEventListener("DOMContentLoaded", parseRSS, false);
+      }
     }
   });
 
@@ -46,7 +48,7 @@ PandaBridge.init(() => {
 
   /* Actions */
 
-  PandaBridge.listen("changeColor", (args) => {});
-
-  PandaBridge.synchronize("synchroImages", (percent) => {});
+  PandaBridge.listen("refresh", (args) => {
+    parseRSS();
+  });
 });
